@@ -283,6 +283,9 @@ function submitText() {
     input.includes("i")
   ) {
     displayInventory();
+    setTimeout(() => {
+      describe()
+    }, 2000);
   }
 
   // ------------------------------------ Open the door ------------------------------------
@@ -362,22 +365,6 @@ function createLocation(newLocation) {
   locationArray.push(newLocation);
   // console.log("locationArray:",locationArray)
 }
-
-/*//!-------------------------------- Locations indices-----------------------------------
-  0 = newLocation variable
-  1 = coordinate
-  2 = name
-  3 = description
-  4 = north
-  5 = east
-  6 = south
-  7 = west
-  8 = up
-  9 = down
-  10 = item
-  11 = lock
-  12 = funct
- */
 
 //!------------------------ Locations to Populate locationArray---------------------------
 // Create Start Location
@@ -539,29 +526,14 @@ const bensOfficeLocation = {
   lock: undefined,
   funct: function say() {
     displayText.innerHTML = "I've got a show tonight, gotta go!";
+    setTimeout(() => {
+      describe()
+    }, 1000);
   },
 };
 
 createLocation(bensOfficeLocation);
 
-//! ------------------------- Populate Current Location Array ----------------------------
-function populateDirectionalStatuses(locationIndex) {
-  // if (locationArray[location]) {
-  // return directionalStatuses = locationArray[locationIndex]
-  // }
-  // console.log("here")
-  directionalStatuses = [];
-  if (locationArray[locationIndex]) {
-    directionalStatuses.push(locationArray[locationIndex].north);
-    directionalStatuses.push(locationArray[locationIndex].east);
-    directionalStatuses.push(locationArray[locationIndex].south);
-    directionalStatuses.push(locationArray[locationIndex].west);
-    directionalStatuses.push(locationArray[locationIndex].up);
-    directionalStatuses.push(locationArray[locationIndex].down);
-  }
-  // console.log("directionalStatuses:",directionalStatuses)
-  return directionalStatuses;
-}
 
 function searchLocationArrayForPlayerLocation() {
   for (
@@ -577,39 +549,14 @@ function searchLocationArrayForPlayerLocation() {
     }
   }
   onTheFlyLocation();
-  // console.log("new location:",locationArray)
-  // searchLocationArrayForPlayerLocation()
 }
 
 //?---------------------------------------------------------
 
 //! Functions Section:
 
-// ------------------------------------- Warp function --------------------------------
-// function warp(override) {
-//   if (override === true) {
-//     [z, x, y] = [0, 9, 9];
-//     playerLocation = [z, x, y];
-//     // look()
-//     describe();
-//     return;
-//   }
-
-//   if (directionalStatuses[6] == "blocked") {
-//     displayText.innerHTML = `You cannot warp out of here`;
-//     playerLocation = searchLocationArrayForPlayerLocation().coordinate;
-//   } else {
-//     [z, x, y] = [0, 9, 9];
-//     playerLocation = [z, x, y];
-//     displayText.innerHTML = `You have warped home!`;
-//     describe();
-//   }
-// }
-
 // ------------------- Creating a new location if none is present. -----------------------
 function onTheFlyLocation() {
-  // if (!playerLocation[locationIndex]) {
-  // displayText.innerHTML = `about to create a new playerLocation, ${playerLocation}`;
   let newLocation = `_${playerLocation}`;
 
   createLocation({
@@ -624,7 +571,6 @@ function onTheFlyLocation() {
 
 // -------------------------------- Take Items function: ---------------------------------
 function takeItem(itemToTake) {
-  // const currentLocation = searchLocationArrayForPlayerLocation();
   if (
     searchLocationArrayForPlayerLocation() == undefined ||
     searchLocationArrayForPlayerLocation().item.length == 0
@@ -660,7 +606,6 @@ function takeItem(itemToTake) {
 
 // ---------------------------- Confirm Drop Items Function ------------------------------
 function dropYN(item) {
-  // let searchLocationArrayForPlayerLocation() = locationArray[locationIndex];
   let itemMessage = `You set down the <strong>${item}</strong>.`;
   setTimeout(() => {
     displayText.innerHTML = itemMessage;
@@ -676,7 +621,6 @@ function dropYN(item) {
 
 // --------------------------------- Drop Items Function ---------------------------------
 function drop(item) {
-  // const currentLocation = searchLocationArrayForPlayerLocation();
 
   // -------------------------------- Drop Inventory Check ---------------------------------
 
@@ -701,7 +645,6 @@ async function go(text) {
     } else {
       y++;
       playerLocation = [z, x, y];
-      // console.log(searchLocationArrayForPlayerLocation())
       moveNotice(text);
     }
   } else if (text == "east" || text == "right") {
@@ -764,14 +707,11 @@ async function go(text) {
 function describe() {
   searchLocationArrayForPlayerLocation();
 
-  // console.log("current location items",searchLocationArrayForPlayerLocation().item)
-  // console.log("current location description:",searchLocationArrayForPlayerLocation().description)
   if (
     searchLocationArrayForPlayerLocation().item.length > 0 &&
     searchLocationArrayForPlayerLocation().description
   ) {
-    // console.log("describing items...")
-    // console.log(searchLocationArrayForPlayerLocation().item)
+
     let items = [];
 
     for (
@@ -782,40 +722,30 @@ function describe() {
       items.push(`${searchLocationArrayForPlayerLocation().item[c]},`);
     }
 
-    // console.log("items:",items)
-
     let word = items[items.length - 1];
     word = word.slice(0, -1);
     let itemList = "";
 
-    // console.log(searchLocationArrayForPlayerLocation().item.length)
-    // console.log("word:",word)
     if (searchLocationArrayForPlayerLocation().item.length > 1) {
-      // console.log(searchLocationArrayForPlayerLocation().item)
       items[items.length - 1] = `and a ` + word + `.`;
       for (item of items) {
         (itemList += item), (itemList += " ");
       }
       itemList = itemList.slice(0, -1);
     } else {
-      // console.log("here")
-      // console.log(items)
       itemList = items[0];
       itemList = itemList.slice(0, -1);
       0.0;
     }
-    // console.log("helloo?")
     setTimeout(() => {
       displayText.innerHTML = `You look around and see... <br> ${
         searchLocationArrayForPlayerLocation().description
       } <br>You also see a <strong>${itemList}</strong>`;
     }, 0);
   }
-  // if (searchLocationArrayForPlayerLocation().description) {
   displayText.innerHTML = `<br><br>You look around and see... <br> ${
     searchLocationArrayForPlayerLocation().description
   }<br>`;
-  // }
 }
 
 function moveNotice(message) {
@@ -828,10 +758,7 @@ function moveNotice(message) {
 }
 
 function blocked(message) {
-  // console.log("here")
-  // setTimeout(() => {
   displayText.innerHTML = message;
-  // }, 0);
   setTimeout(() => {
     describe();
   }, 1000);
@@ -891,18 +818,3 @@ function displayInventory() {
     displayText.innerHTML = `<strong>Inventory:</strong> <br>${inventoryList}`;
   }
 }
-
-//! ---------------------------- Debugging commands Section ------------------------------
-
-// -------------------- Display information about current location -----------------------
-// function whereAmI() {
-//   let currentLocation = locationArray.indexOf(playerLocation);
-//   displayText.innerHTML = `playerLocation: ${playerLocation}`;
-//   if (locationArray[currentLocation]) {
-//     displayText.innerHTML = `locationArray[locationIndex].coordinate: ${locationArray[currentLocation].coordinate}`;
-//     displayText.innerHTML = `directionalStatuses: ${directionalStatuses}`;
-//   } else {
-//     displayText.innerHTML = `directionalStatuses: ${directionalStatuses}`;
-//   }
-//   //?    start();
-// }
