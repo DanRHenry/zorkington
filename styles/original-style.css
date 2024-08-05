@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: gray;
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/270/234/535/digital-art-pixel-art-pixelated-pixels-wallpaper-6960388d014a9d1b0607684f70f1f62d.jpg");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+#box {
+    position: relative;
+    opacity: 85%;
+    background-color: green;
+    border: 1vw solid white;
+    border-bottom: .65vw solid white;
+    border-radius: 1rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: 7vw;
+    margin-left: 3vw;
+    height: 30vw;
+    width: 30vw;
+    align-items: center;
+}
+
+#box > button {
+    font-size: 1vw;
+    padding: .25vw;
+}
+
+h1 {
+    font-size: 2vw;
+    display: flex;
+    margin-top: 2vw;
+    flex-direction: row;
+    color: whitesmoke;
+    text-shadow: 2vw 2vw 2vw gray;
+}
+
+#consoleText {
+    height: 10vw;
+}
+
+#displayText {
+    font-size: 1.5vw;
+    margin-top: 1em;
+    /* margin-bottom: 2em; */
+    background-color: rgb(189, 189, 39);
+    color: black;
+    border: .15em black solid;
+    border-radius: .25em;
+    /* padding-top: 1em; */
+    padding: 1em;
+    height: 10vw;
+    width: 20vw;
+    /* text-align: center; */
+}
+
+#inputText {
+    opacity: initial;
+    border: .2vw solid black;
+    margin-top: 8vw;
+    margin-bottom: 1em;
+    height: 4vw;
+    width: 20vw;
+    font-size: 1.5vw;
+    text-align: center;
+    background-color: rgb(208, 208, 208);
+}
+
+/* #directionals {
+    position: relative;
+    top: 5rem;
+    height: 100vw;
+    width: 10vw;
+    background-color: black;
+    align-items: center;
+} */
+#North {
+    position: absolute;
+    bottom: 28%;
+}
+
+#South {
+    position: absolute;
+    bottom: 20%;
+}
+
+#East{
+    position: absolute;
+    right: 32%;
+    bottom: 20%;
+}
+
+#West {
+    position: absolute;
+    left: 32%;
+    bottom: 20%;
+    /* right: 5rem; */
+}
+#submit-btn{
+    display: none;
+}
+#commands {
+    display: flex;
+    flex-direction: row;
+    opacity: 85%;
+    background-color: gray;
+    border: 1vw solid white;
+    border-top: .65vw solid white;
+    align-items: center;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 1vw;
+    margin-left: 3vw;
+    height: 5vw;
+    width: 30vw;
+}
+
+#commands > button {
+    opacity: 200%;
+    margin-left: .5em;
+    margin-right: .5em;
+    width: 33%;
+    height: 50%;
+    font-size: 1.25vw;
+}

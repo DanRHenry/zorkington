@@ -1,0 +1,101 @@
+body {
+    background-color: gray;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+h2 {
+    text-align: center;
+}
+
+#controls {
+    /* margin-top: 4rem; */
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+    background-color: rgb(80, 112, 33);
+    border-radius: 1em;
+}
+
+.flex-row {    
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    font-size: 2vw;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+}
+
+input {
+    width: 16vw;
+    height: 1.5rem;
+    font-size: 1em;
+    padding: 1em;
+    padding-top: 0;
+}
+
+button {
+    float: right;
+}
+
+#generalInformation {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1vw;
+    background-color: rgb(103, 8, 8);
+    border-radius: 1em;
+    margin: 1em;
+}
+
+#directions {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1vw;
+    background-color: rgb(3, 118, 118);
+    border-radius: 1em;
+}
+
+#items {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1vw;
+    background-color: green;
+    border-radius: 1em;
+    margin: 1em;
+}
+
+#displayLocation {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1.5vw;
+    background-color: rgb(3, 118, 118);
+    border-radius: 1em;
+    width: 100%;
+    margin: 1em;
+}
+
+.displayContent {
+    margin: .5em;
+}
+
+#fillContent {
+    display: inline-block;
+    float: none;
+    margin-left: 3em;
+    padding: 0 .5em 0 .5em;
+    font-size: 1em;
+    margin-top: 1vw;
+}
+
+#finalSubmit {
+    display: inline-block;
+    float: none;
+    margin-left: 1em;
+    font-size: 1em;
+    margin-top: 1vw;
+    padding: 0 .5em 0 .5em;
+}

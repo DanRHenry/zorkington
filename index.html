@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zorkington</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    
+    <div id="bodySub">
+      <div id="helpBox">
+        <div id="helpContent">
+        Helpful Commands:
+        <br>
+        <br>
+        <ul>
+        <li>Go Up/Down: Climb Stairs, etc. </li>
+        <li>Warp: Return to Starting Point</li>
+        <li>Unlock: Unlock doors, etc.</li>
+      </ul>
+      </div>
+        <button id="closeBox">Close</button>
+      </div>
+      <!-- <div id="playArea"> -->
+    <!-- Title -->
+    <!-- Box containing the Display -->
+    <div id="box">
+      <p>Zorkington</p>
+
+
+      <!-- Display Console Text Box -->
+      <div id="displayTextBox"
+      style="
+      color: black;
+      font-size: clamp(12px, calc(0.54vw + 14px), 20px);
+      "
+      >
+        <!-- Display Text Area -->
+        <div id="displayText"></div>
+        </div>
+    </div>
+
+    <div id="textFormContainer">
+    <!-- Text Input Form -->
+      <input
+        id="inputText"
+        style="color: black"
+        type="text"
+        value="Enter Command"
+        autocomplete="off"
+        onclick="this.value=''"
+      />
+    </div>
+    <!-- Directionals and Common Command Buttons -->
+    <div id="directionalsAndButtonsSection">
+    <!-- Direction Buttons -->
+        <div id="directionals">
+        <div>
+            <div>
+    <!-- Spacer before Directional Buttons -->
+            <div id="spacer"></div>
+                <button id="North">North</button>
+            </div>
+            <div>
+              <button id="West">West</button>
+              <button id="South">South</button>
+              <button id="East">East</button>
+            </div>
+        </div>
+      <!-- Common Commands Buttons Box-->
+      <div id="commands">
+    <!-- Common Commands Buttons -->
+        <button id="look">Look</button>
+        <button id="inventory">Inventory</button>
+        <!-- <button id="take">Take</button> -->
+        <button id="help-btn">Help</button>
+        <input type="submit" id="submit-btn" value="Enter" />
+        <!--  
+        Q - Push
+        W - Open
+        E - Walk to
+        R - Newkid
+        T - Turn on
+        A - Pull
+        S - Close
+        D - Pick up
+        F - Unlock
+        G - Turn off
+        Z - Give
+        X - Read
+        C - What is
+        V - Use
+        B - Fix
+    -->
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+<!-- </div> -->
+</div>
+  </body>
+</html>

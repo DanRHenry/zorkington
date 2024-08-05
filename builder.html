@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder</title>
+    <link rel="stylesheet" href="./styles/builderStyle.css">
+</head>
+<body>
+    <header>Location Editor</header>
+    <div>
+    <div class="flex-row">
+        <!-- <div id="controls">
+            <header>controls</header> 
+
+        </div> -->
+        <div id="generalInformation"><header>General Information</header> 
+            <h2>New Location</h2>
+            <input type="text" name="New Location" id="newLocation">
+            <button id="newLocationButton" class = "submit">Submit</button>
+
+            <h2>Coordinate</h2>
+            <input type="text" name="coordinate" id="coordinate">
+            <button id="coordinateButton" class = "submit">Submit</button>
+
+            <h2>Name</h2>
+            <input type="text" name="name" id="nameInput">
+            <button id="nameButton" class = "submit">Submit</button>
+
+            <h2>Description</h2>
+            <input type="text" name="description" id="description">
+            <button id="descriptionButton" class = "submit">Submit</button>
+        </div>
+        <div id="directions"><header>Directions</header>
+
+            <h2>North</h2>
+            <input type="text" name="north" id="north"><button id="northButton" class = "submit">Submit</button>
+
+            <h2>East</h2>
+            <input type="text" name="east" id="east"><button id="eastButton" class = "submit">Submit</button>
+
+            <h2>South</h2>
+            <input type="text" name="south" id="south"><button id="southButton" class = "submit">Submit</button>
+
+            <h2>West</h2>
+            <input type="text" name="west" id="west"><button id="westButton" class = "submit">Submit</button>
+
+            <h2>Up</h2>
+            <input type="text" name="up" id="up"><button id="upButton" class = "submit">Submit</button>
+
+            <h2>Down</h2>
+            <input type="text" name="down" id="down"><button id="downButton" class = "submit">Submit</button>
+        </div>
+        <div id="items"><header>Items</header>
+
+            <h2>Item One</h2>
+            <input type="text" name="item1" id="item1"><button id="item1Button" class = "submit">Submit</button>
+
+            <h2>Item Two</h2>
+            <input type="text" name="item2" id="item2"><button id="item2Button" class = "submit">Submit</button>
+
+            <h2>Item Three</h2>
+            <input type="text" name="item3" id="item3"><button id="item3Button" class = "submit">Submit</button>
+        </div>
+        <div id="displayLocation">
+            <header>Display Location</header>
+            <div class="displayContent" id="savedLocation">Location: Blank</div>
+            <div class="displayContent" id="savedCoordinate">Coordinate: Blank</div>
+            <div class="displayContent" id="savedName">Name: Blank</div>
+            <div class="displayContent" id="savedDescription">Description: Blank</div>
+            <div class="displayContent" id="savedNorth">North: Blank</div>
+            <div class="displayContent" id="savedSouth">South: Blank</div>
+            <div class="displayContent" id="savedEast">East: Blank</div>
+            <div class="displayContent" id="savedWest">West: Blank</div>
+            <div class="displayContent" id="savedUp">Up: Blank</div>
+            <div class="displayContent" id="savedDown">Down: Blank</div>
+            <div class="displayContent" id="savedItemOne">Item One: Blank</div>
+            <div class="displayContent" id="savedItemTwo">Item Two: Blank</div>
+            <div class="displayContent" id="savedItemThree">Item Three: Blank</div>
+            <button id="fillContent">Fill</button>
+            <button id="finalSubmitButton">Submit</button>
+        </div>
+</div>
+<script src="./builder.js"></script>
+</body>
+</html>
